@@ -46,7 +46,7 @@ jobs:
     environment:
       name: 'pr1'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
@@ -55,12 +55,12 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-      
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
           app-name: 'as-ar-qc-artvweb-prd-01'
           slot-name: 'pr1'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E485E428CEC54B95B8D9026A06839449 }}
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_704E7624D01647CFA687296AEB7878FB }}
