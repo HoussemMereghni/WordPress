@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'AS-AR-QC-ARTVWEB-PRD-01'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FABA1CBA297041F79B019DCFB8039A0E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6CE4B6091ACF4AFD985531D6A734960E }}
           package: .
